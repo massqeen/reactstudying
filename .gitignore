@@ -2,7 +2,7 @@
 /lsp
 
 # idea settings
-/.idea
+.idea/
 
 # dependencies
 /node_modules
