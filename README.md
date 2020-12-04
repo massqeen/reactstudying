@@ -1,2 +1,1 @@
-## React studying
-#creating some base components
+# Todos basic redux app
