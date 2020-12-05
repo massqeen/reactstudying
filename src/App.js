@@ -1,10 +1,13 @@
-import { useEffect } from 'react';
-import Container from './components/Container/Container';
+import Footer from './containers/Footer';
+import AddTodo from './containers/AddTodo';
+import VisibleTodoList from './containers/VisibleTodoList';
 
-const App = () => {
-  useEffect(() => {}, []);
-
-  return <Container />;
-};
+const App = () => (
+  <>
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
+  </>
+);
 
 export default App;

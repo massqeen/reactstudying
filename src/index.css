@@ -16,6 +16,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
   background-color: #fff;
   color: #212121;
+  padding: 20px;
 }
 
 img {
@@ -27,7 +28,8 @@ img {
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  /*list-style: none;*/
+  cursor: pointer;
 }
 
 button {
