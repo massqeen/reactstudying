@@ -1,7 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Container from './components/Container/Container';
 
 const App = () => {
+  useEffect(() => {}, []);
+
   return <Container />;
 };
 
