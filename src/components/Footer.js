@@ -1,7 +1,7 @@
 import FilterLink from '../containers/FilterLink';
 import VisibilityFilters from '../redux/actions/VisibilityFilters';
 
-const {SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED}=VisibilityFilters;
+const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = VisibilityFilters;
 
 const Footer = () => (
   <div>
