@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { VisibilityFilters, toggleTodo } from '../redux/actions';
+import VisibilityFilters from '../redux/actions/VisibilityFilters';
 import List from '../components/Todo/List';
 
 const { SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;

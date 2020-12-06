@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo } from '../redux/actions';
+import addTodo from '../redux/actionGens/addTodo';
 import Form from '../components/UI/Form';
 
 const AddTodo = ({ dispatch }) => {

@@ -1,4 +1,4 @@
-import Footer from './containers/Footer';
+import Footer from './components/Footer';
 import AddTodo from './containers/AddTodo';
 import VisibleTodoList from './containers/VisibleTodoList';
 

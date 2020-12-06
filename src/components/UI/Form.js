@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 const Form = ({ onSubmit }) => {
   let input = null;
   const inputRef = (node) => {
