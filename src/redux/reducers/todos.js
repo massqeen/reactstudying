@@ -1,5 +1,5 @@
-import ADD_TODO from '../actions/ADD_TODO';
-import TOGGLE_TODO from '../actions/TOGGLE_TODO';
+import { ADD_TODO } from '../actions/addTodo';
+import { TOGGLE_TODO } from '../actions/toggleTodo';
 
 const todos = (state = [], { type, text, id }) => {
   switch (type) {

@@ -1,4 +1,4 @@
-import SET_VISIBILITY_FILTER from '../actions/SET_VISIBILITY_FILTER';
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 const setVisibilityFilter = (filter) => ({
   type: SET_VISIBILITY_FILTER,

@@ -1,4 +1,4 @@
-import SET_VISIBILITY_FILTER from '../actions/SET_VISIBILITY_FILTER';
+import { SET_VISIBILITY_FILTER } from '../actions/setVisibilityFilter';
 import VisibilityFilters from '../actions/VisibilityFilters';
 
 const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
