@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import VisibilityFilters from '../redux/actions/VisibilityFilters';
 import List from '../components/Todo/List';
 import toggleTodo from '../redux/actions/toggleTodo';
+import deleteTodo from '../redux/actions/deleteTodo';
 
 const { SHOW_COMPLETED, SHOW_ACTIVE } = VisibilityFilters;
 
@@ -23,6 +24,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onTodoClick: (id) => {
     dispatch(toggleTodo(id));
+  },
+  onButtonClick: (id) => {
+    dispatch(deleteTodo(id));
   },
 });
 

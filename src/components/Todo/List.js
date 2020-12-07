@@ -1,12 +1,13 @@
 import { func, arrayOf, shape, string } from 'prop-types';
 import Todo from './Todo';
 
-const List = ({ todos, onTodoClick }) => (
+const List = ({ todos, onTodoClick, onButtonClick }) => (
   <ul>
     {todos.map((t) => (
       <Todo
         key={t.id}
-        onClick={onTodoClick}
+        onTodoClick={onTodoClick}
+        onButtonClick={onButtonClick}
         text={t.text}
         completed={t.completed}
         id={t.id}
@@ -17,6 +18,7 @@ const List = ({ todos, onTodoClick }) => (
 
 List.propTypes = {
   onTodoClick: func.isRequired,
+  onButtonClick: func.isRequired,
   todos: arrayOf(shape({ id: string.isRequired })).isRequired,
 };
 
