@@ -1,4 +1,5 @@
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { createSelector } from 'reselect';
 import VisibilityFilters from '../redux/actions/VisibilityFilters';
 import List from '../components/Todo/List';
 import toggleTodo from '../redux/actions/toggleTodo';
@@ -17,18 +18,33 @@ const getVisibleTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = (state) => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter),
-});
+const VisibleTodoList = () => {
+  const dispatch = useDispatch();
 
-const mapDispatchToProps = (dispatch) => ({
-  onTodoClick: (id) => {
+  const todosSelector = (state) => state.todos;
+  const filterSelector = (state) => state.visibilityFilter;
+
+  const selectFilteredTodos = createSelector(
+    todosSelector,
+    filterSelector,
+    (currTodos, currFilter) => getVisibleTodos(currTodos, currFilter)
+  );
+
+  const onTodoClick = (id) => {
     dispatch(toggleTodo(id));
-  },
-  onButtonClick: (id) => {
-    dispatch(deleteTodo(id));
-  },
-});
+  };
 
-const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(List);
+  const onButtonClick = (id) => {
+    dispatch(deleteTodo(id));
+  };
+
+  return (
+    <List
+      todos={useSelector(selectFilteredTodos)}
+      onTodoClick={onTodoClick}
+      onButtonClick={onButtonClick}
+    />
+  );
+};
+
 export default VisibleTodoList;
