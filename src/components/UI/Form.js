@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const Form = ({ onSubmit }) => {
-  let input = null;
-  const inputRef = (node) => {
-    input = node;
+  const [input, setInput] = useState('');
+
+  const handleChange = ({ target }) => {
+    setInput(target.value);
+  };
+
+  const onFormSubmit = (e) => {
+    onSubmit(e, input);
+    setInput('');
   };
 
   return (
     <div>
-      <form
-        onSubmit={(e) => {
-          onSubmit(e, input);
-        }}
-      >
-        <input ref={inputRef} />
+      <form onSubmit={onFormSubmit}>
+        <input value={input} onChange={handleChange} />
         <button type="submit">Add Todo</button>
       </form>
     </div>

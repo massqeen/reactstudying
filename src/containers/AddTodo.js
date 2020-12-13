@@ -4,15 +4,14 @@ import addTodo from '../redux/actions/addTodo';
 import Form from '../components/UI/Form';
 
 const AddTodo = ({ dispatch }) => {
-  const submitHandler = (e, input) => {
+  const submitHandler = (e, inputValue) => {
     e.preventDefault();
 
-    if (!input.value.trim()) {
+    if (!inputValue.trim()) {
       return;
     }
 
-    dispatch(addTodo(input.value));
-    input.value = '';
+    dispatch(addTodo(inputValue));
   };
 
   return <Form onSubmit={submitHandler} />;
