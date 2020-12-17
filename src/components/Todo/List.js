@@ -1,7 +1,8 @@
+import React from 'react';
 import { func, arrayOf, shape, string } from 'prop-types';
 import Todo from './Todo';
 
-const List = ({ todos, onTodoClick, onButtonClick }) => (
+const List = React.memo(({ todos, onTodoClick, onButtonClick }) => (
   <ul>
     {todos.map((t) => (
       <Todo
@@ -14,7 +15,7 @@ const List = ({ todos, onTodoClick, onButtonClick }) => (
       />
     ))}
   </ul>
-);
+));
 
 List.propTypes = {
   onTodoClick: func.isRequired,
