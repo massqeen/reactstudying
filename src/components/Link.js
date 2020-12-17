@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -8,7 +9,7 @@ const Span = styled.span`
   padding: 4px;
 `;
 
-const Link = ({ active, children, onClick }) => {
+const Link = React.memo(({ active, children, onClick }) => {
   if (active) {
     return <Span>{children}</Span>;
   }
@@ -24,7 +25,7 @@ const Link = ({ active, children, onClick }) => {
       {children}
     </LinkStyled>
   );
-};
+});
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
